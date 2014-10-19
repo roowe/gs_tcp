@@ -8,6 +8,6 @@
 %% -define(PRINT(Format, Args),
 %%     io:format("(~p:~p:~p) : " ++ Format,
 %%               [self(), ?MODULE, ?LINE] ++ Args)).
-%% -define(PRINT(Format, Args), ok).
+-define(PRINT(Format, Args), ok).
 
 -endif.

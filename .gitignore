@@ -1,0 +1,8 @@
+.rebar/
+*.orig
+*.svn*
+*.beam
+*.swp
+*.erl~
+.eunit
+ebin/

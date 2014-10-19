@@ -1,0 +1,12 @@
+{application, gs_tcp,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { gs_tcp_app, []}},
+  {env, []}
+ ]}.

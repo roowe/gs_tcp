@@ -91,11 +91,11 @@ start_client(Reader, Sock) ->
     case catch Reader:start_reader(Sock) of
         {ok, Pid} ->
             ?PRINT("reader ~p~n", [Pid]),
-            case gen_tcp:controlling_process(Sock, Pid) of
+            case catch gen_tcp:controlling_process(Sock, Pid) of
                 ok ->
-                    ok;
-                {error, Error} ->
-                    ?ERROR_MSG("controlling_process ~p~n", [Error]),
+                    ok;                
+                Other ->
+                    ?ERROR_MSG("controlling_process ~p~n", [Other]),
                     failed
             end;
         Other ->
